@@ -1,13 +1,13 @@
 FROM node:carbon
 
-WORKDIR /usr/src/sandbox
+RUN mkdir -p /usr/src/test
+WORKDIR /usr/src/test
 
-COPY package*.json ./
+COPY package*.json /usr/src/test/
+COPY index.js /usr/src/test/
 
 RUN npm install
 
-COPY . .
-
 EXPOSE 4000
 
-CMD [ "npm", "start" ]
+RUN ["npm", "start"]
