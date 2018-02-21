@@ -28,4 +28,4 @@ UserSchema.methods.createUser = function(req,res,next) {
     });
 };
 
-  module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('User', UserSchema)
